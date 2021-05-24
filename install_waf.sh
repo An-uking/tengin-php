@@ -2,9 +2,6 @@
 #
 TENGINE_INSTALL_DIR=/usr/local/tengine
 
-mkdir -p ${WWWROOT_DIR}/default ${WWWLOGS_DIR}
-[ -d /home ] && chmod 755 /home
-
 [ -z "`grep ^'export PATH=' /etc/profile`" ] && echo "export PATH=${TENGINE_INSTALL_DIR}/sbin:\$PATH" >> /etc/profile
 [ -n "`grep ^'export PATH=' /etc/profile`" -a -z "`grep ${TENGINE_INSTALL_DIR} /etc/profile`" ] && sed -i "s@^export PATH=\(.*\)@export PATH=${TENGINE_INSTALL_DIR}/sbin:\1@" /etc/profile
 
